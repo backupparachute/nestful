@@ -28,7 +28,13 @@ class TestRequest < MiniTest::Unit::TestCase
     Nestful::Request.new('http://example.com/v1/tokens', :method => :put).execute
     assert_requested(:put, 'http://example.com/v1/tokens')
   end
-
+  
+  def test_patch
+    stub_request(:any, 'http://example.com/v1/tokens')
+    Nestful::Request.new('http://example.com/v1/tokens', :method => :patch).execute
+    assert_requested(:patch, 'http://example.com/v1/tokens')
+  end
+  
   def test_head
     stub_request(:any, 'http://example.com/v1/tokens')
     Nestful::Request.new('http://example.com/v1/tokens', :method => :head).execute
