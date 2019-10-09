@@ -2,7 +2,7 @@ module Nestful
   class Response
     attr_reader :response, :location, :body, :headers, :parser
 
-    def initialize(response, location = nil)
+    def initialize(response, location)
       @response = response
       @body     = response.body
       @location = location
