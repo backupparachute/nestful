@@ -68,7 +68,7 @@ module Nestful
     end
 
     def encoded?
-      [:post, :put].include?(method)
+      [:post, :put, :patch].include?(method)
     end
 
     def encoded
